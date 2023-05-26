@@ -1,5 +1,7 @@
 import user from '../json/user.json'
 import { Profile } from './Profile';
+import data from '../json/data.json';
+import { StatisticsList } from './Statistics';
 export const App = () => {
   return (
     <div
@@ -12,15 +14,8 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      <Profile
-        user={ user }
-        // tag={user.tag}
-        // location={user.location}
-        // avatar={user.avatar}
-        // followers={user.stats.followers}
-        // views={user.stats.views}
-        // likes={user.stats.likes}
-      />
+      <Profile user={user} />
+      <StatisticsList data={data} />
     </div>
   );
 };
