@@ -1,12 +1,14 @@
+import { Card, Description, Photo } from "./Profile.styled";
+
 export const Profile = ({ user }) => {
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={user.avatar} alt="User avatar" className="avatar" />
+    <Card className="profile">
+      <Description className="description">
+        <Photo src={user.avatar} alt="User avatar" className="avatar" />
         <p className="name">{user.username}</p>
         <p className="tag">{user.tag}</p>
         <p className="location">{user.location}</p>
-      </div>
+      </Description>
 
       <ul className="stats">
         <li>
@@ -22,6 +24,6 @@ export const Profile = ({ user }) => {
           <span className="quantity"> {user.stats.likes}</span>
         </li>
       </ul>
-    </div>
+    </Card>
   );
 };
