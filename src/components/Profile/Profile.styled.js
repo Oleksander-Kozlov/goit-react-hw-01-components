@@ -1,21 +1,27 @@
 import styled from "styled-components";
+
 export const Card = styled.div`
 width: 600px;
 margin: auto;
+margin-bottom:50px;
 text-align: center;
-background-color: white;
-border-radius: 4px;
+
+border-radius: 8px;
 box-shadow: 2px;
+
 `
 export const Description = styled.div`
-background-color: aquamarine;
-padding: 50px;
-border-radius: 4px;
-`
+  background-color: aquamarine;
+  padding: 50px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border: 3px solid black;
+`;
 export const Photo = styled.img`
 width: 200px;
 border-radius: 50%;
-border: 2px solid purple ;
+border: 5px solid purple ;
+padding: 10px;
 `
 export const Name = styled.p`
 font-family: Georgia, 'Times New Roman', Times, serif;
@@ -26,6 +32,7 @@ export const Text = styled.p`
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 36px;
   color: rgba(149, 137, 137, 0.803);
+  margin-bottom: 0;
 `;
 export const Statlist = styled.ul`
   margin: 0;
@@ -33,14 +40,23 @@ export const Statlist = styled.ul`
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  background-color: gray;
+  
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border: 3px solid black;
 `;
 export const StatItem = styled.li`
-display: flex;
-flex-direction:column;
-border: 1px solid black;
-`
+  display: flex;
+  flex-direction: column;
+  /* border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-right: 3px solid black;
+  border-left: 3px solid black; */
+  background-color: gray;
+  padding: 5px;
+`;
 export const Quantity = styled.span`
-font-weight: bold;
-`
+  font-weight: bold;
+  
+`;
 

@@ -20,15 +20,28 @@ export const Profile = ({ user }) => {
       </Description>
 
       <Statlist className="stats">
-        <StatItem>
+        <StatItem
+          style={{
+            borderBottomLeftRadius: '25px',
+          }}
+        >
           <span className="label">Followers</span>
           <Quantity className="quantity"> {user.stats.followers}</Quantity>
         </StatItem>
-        <StatItem>
+        <StatItem
+          style={{
+            borderRight: '3px solid black',
+            borderLeft: '3px solid black',
+          }}
+        >
           <span className="label">Views</span>
           <Quantity className="quantity"> {user.stats.views}</Quantity>
         </StatItem>
-        <StatItem>
+        <StatItem
+          style={{
+            borderBottomRightRadius: '25px',
+          }}
+        >
           <span className="label">Likes</span>
           <Quantity className="quantity"> {user.stats.likes}</Quantity>
         </StatItem>

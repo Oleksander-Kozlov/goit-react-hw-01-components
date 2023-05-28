@@ -1,19 +1,36 @@
+import { Section, ListStats, ItemStats, TitleUploadStats, LabelStats, Percentage} from './Statistics.styled';
+import { getRandomHexColor } from './getRandomHexColor';
 export const StatisticsList = ({ data }) => {
+  
   return (
-    <section className="statistics">
-      <h2 className="title">Upload stats</h2>
-      <ul className="stat-list">
-        {data.map(dat => {
+    <Section className="statistics">
+      <TitleUploadStats className="title">Upload stats</TitleUploadStats>
+      <ListStats className="stat-list">
+
+        {data.filter((item, index, arr) => {
+  if (item.label === ".pdf") {
+    return arr.findIndex(i => i.label === ".pdf") === index;
+  }
+  return true;
+}).map(dat => {
+          // console.log(dat.label);
+          let randomColor = getRandomHexColor()
+          
           return (
-            <li key={dat.id}>
-              <span className="label"> {dat.label}</span>
-              <span className="percentage"> {dat.percentage}</span>
-            </li>
+            <ItemStats
+              key={dat.id}
+              style={{
+                backgroundColor: randomColor,
+              }}
+            >
+              <LabelStats className="label"> {dat.label}</LabelStats>
+              <Percentage className="percentage"> {dat.percentage}%</Percentage>
+            </ItemStats>
           );
         }
           )}
         
-      </ul>
-    </section>
+      </ListStats>
+    </Section>
   );
 };
