@@ -1,6 +1,7 @@
+import { TableTransaction } from "./TransactionHistory.styled";
 export const Transactions = ({ items }) => {
   return (
-    <table className="item-history">
+    <TableTransaction className="item-history">
       <thead>
         <tr>
           <th>Type</th>
@@ -19,6 +20,6 @@ export const Transactions = ({ items }) => {
           );
         })}
       </tbody>
-    </table>
+    </TableTransaction>
   );
 };

@@ -22,7 +22,7 @@ export const Profile = ({ user }) => {
       <Statlist className="stats">
         <StatItem
           style={{
-            borderBottomLeftRadius: '25px',
+            borderBottomLeftRadius: '27px',
           }}
         >
           <span className="label">Followers</span>
@@ -39,7 +39,7 @@ export const Profile = ({ user }) => {
         </StatItem>
         <StatItem
           style={{
-            borderBottomRightRadius: '25px',
+            borderBottomRightRadius: '27px',
           }}
         >
           <span className="label">Likes</span>

@@ -16,6 +16,7 @@ export const Description = styled.div`
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   border: 3px solid black;
+  border-bottom: none;
 `;
 export const Photo = styled.img`
 width: 200px;

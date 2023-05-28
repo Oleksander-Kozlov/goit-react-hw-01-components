@@ -8,10 +8,7 @@ export const StatisticsList = ({ data }) => {
       <ListStats className="stat-list">
 
         {data.filter((item, index, arr) => {
-  if (item.label === ".pdf") {
-    return arr.findIndex(i => i.label === ".pdf") === index;
-  }
-  return true;
+  return arr.findIndex(i => i.label === item.label) === index;
 }).map(dat => {
           // console.log(dat.label);
           let randomColor = getRandomHexColor()

@@ -6,6 +6,7 @@ width: 600px;
 text-align: center;
 justify-content: center;
 margin: auto;
+margin-bottom: 50px
 `
 export const TitleUploadStats = styled.h2`
   padding: 60px;
