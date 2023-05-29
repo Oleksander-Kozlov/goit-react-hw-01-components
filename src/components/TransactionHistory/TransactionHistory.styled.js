@@ -30,11 +30,11 @@ export const RawOfTransaction = styled.tr`
   font-family: 'Helvetica', Arial, sans-serif;
   font-size: 16px;
   padding: 10px;
-  :nth-child(odd) {
+  &:nth-child(odd) {
     background-color: white;
   }
 
-  :nth-child(even) {
+  &:nth-child(even) {
     background-color: #dcdcdc;
   }
 `;
