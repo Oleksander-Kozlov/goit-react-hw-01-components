@@ -8,15 +8,24 @@ import {
   StatItem,
   Quantity,
 } from './Profile.styled';
+import PropTypes from 'prop-types';
 
-export const Profile = ({ user }) => {
+export const Profile = ({
+  user: {
+    avatar,
+    username,
+    tag,
+    location,
+    stats: { followers, views, likes },
+  },
+}) => {
   return (
     <Card className="profile">
       <Description className="description">
-        <Photo src={user.avatar} alt="User avatar" className="avatar" />
-        <Name className="name">{user.username}</Name>
-        <Text className="tag">{user.tag}</Text>
-        <Text className="location">{user.location}</Text>
+        <Photo src={avatar} alt="User avatar" className="avatar" />
+        <Name className="name">{username}</Name>
+        <Text className="tag">{tag}</Text>
+        <Text className="location">{location}</Text>
       </Description>
 
       <Statlist className="stats">
@@ -26,7 +35,7 @@ export const Profile = ({ user }) => {
           }}
         >
           <span className="label">Followers</span>
-          <Quantity className="quantity"> {user.stats.followers}</Quantity>
+          <Quantity className="quantity"> {followers}</Quantity>
         </StatItem>
         <StatItem
           style={{
@@ -35,7 +44,7 @@ export const Profile = ({ user }) => {
           }}
         >
           <span className="label">Views</span>
-          <Quantity className="quantity"> {user.stats.views}</Quantity>
+          <Quantity className="quantity"> {views}</Quantity>
         </StatItem>
         <StatItem
           style={{
@@ -43,9 +52,23 @@ export const Profile = ({ user }) => {
           }}
         >
           <span className="label">Likes</span>
-          <Quantity className="quantity"> {user.stats.likes}</Quantity>
+          <Quantity className="quantity"> {likes}</Quantity>
         </StatItem>
       </Statlist>
     </Card>
   );
+};
+
+Profile.propTypes = {
+  user: PropTypes.shape({
+    avatar: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    stats: PropTypes.shape({
+      followers: PropTypes.number.isRequired,
+      views: PropTypes.number.isRequired,
+      likes: PropTypes.number.isRequired,
+    }).isRequired,
+  }).isRequired,
 };

@@ -4,8 +4,10 @@ import {
   NameFriend,
   PictureFriend,
 } from './FriendItem.styled';
-export const FriendItem = function ({ friends }) {
-  return friends.map(friend => {
+import PropTypes from 'prop-types';
+
+export const FriendItem = ({ friends }) =>
+  friends.map(friend => {
     return (
       <FriendCard key={friend.id} className="item">
         <Status className="status" isOnline={friend.isOnline}></Status>
@@ -19,9 +21,14 @@ export const FriendItem = function ({ friends }) {
       </FriendCard>
     );
   });
+
+FriendItem.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
-
-
-// {
-//   friend.isOnline;
-// }

@@ -1,12 +1,10 @@
-import { FriendItem } from "./FriendItem";
+import { FriendItem } from './FriendItem';
 import friends from '../json/friends.json';
-import { Friendslist } from "./FriendList.styled";
+import { Friendslist } from './FriendList.styled';
 export const FriendList = () => {
-    return (
-      <Friendslist className="friend-list">
-        <FriendItem friends={friends} />
-      </Friendslist>
-    );
-}
-
-
+  return (
+    <Friendslist className="friend-list">
+      <FriendItem friends={friends} />
+    </Friendslist>
+  );
+};

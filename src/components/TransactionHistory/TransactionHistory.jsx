@@ -4,6 +4,7 @@ import {
   TBodyTransaction,
   RawOfTransaction,
 } from './TransactionHistory.styled';
+import PropTypes from 'prop-types';
 export const Transactions = ({ items }) => {
   return (
     <TableTransaction className="item-history">
@@ -27,4 +28,15 @@ export const Transactions = ({ items }) => {
       </TBodyTransaction>
     </TableTransaction>
   );
+};
+
+Transactions.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };

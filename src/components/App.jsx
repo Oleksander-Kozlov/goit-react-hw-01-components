@@ -1,5 +1,5 @@
 import React from 'react';
-import user from './json/user.json'
+import user from './json/user.json';
 import { Profile } from './Profile/Profile';
 import data from './json/data.json';
 import { StatisticsList } from './Statistics/Statistics';
@@ -17,8 +17,7 @@ export const App = () => {
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
-        color: '#010101'
-        
+        color: '#010101',
       }}
     >
       <Profile user={user} />

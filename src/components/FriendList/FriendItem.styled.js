@@ -19,10 +19,8 @@ export const Status = styled.span`
   width: 12px;
   height: 12px;
   border-radius: 50%;
- 
-  background-color: ${(props)=>(props.isOnline?"green":"red")};
-  
-`
+  background-color: ${props => (props.isOnline ? 'green' : 'red')};
+`;
 
 export const PictureFriend = styled.img`
   border-radius: 4px;
