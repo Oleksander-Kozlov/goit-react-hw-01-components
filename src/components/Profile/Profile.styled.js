@@ -35,7 +35,7 @@ export const Text = styled.p`
   font-size: 36px;
   color: rgba(149, 137, 137, 0.803);
   margin-bottom: 20px;
-  :last-child {
+  &:last-child {
     margin-bottom: 0;
   }
 `;
