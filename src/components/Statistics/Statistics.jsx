@@ -14,29 +14,20 @@ export const StatisticsList = ({ data }) => {
     <Section className="statistics">
       <TitleUploadStats className="title">Upload stats</TitleUploadStats>
       <ListStats className="stat-list">
-        {data
-          .filter((item, index, arr) => {
-            return arr.findIndex(i => i.label === item.label) === index;
-          })
-          .map(dat => {
-            // console.log(dat.label);
-            let randomColor = getRandomHexColor();
-
-            return (
-              <ItemStats
-                key={dat.id}
-                style={{
-                  backgroundColor: randomColor,
-                }}
-              >
-                <LabelStats className="label"> {dat.label}</LabelStats>
-                <Percentage className="percentage">
-                  {' '}
-                  {dat.percentage}%
-                </Percentage>
-              </ItemStats>
-            );
-          })}
+        {data.map(dat => {
+          let randomColor = getRandomHexColor();
+          return (
+            <ItemStats
+              key={dat.id}
+              style={{
+                backgroundColor: randomColor,
+              }}
+            >
+              <LabelStats className="label"> {dat.label}</LabelStats>
+              <Percentage className="percentage"> {dat.percentage}%</Percentage>
+            </ItemStats>
+          );
+        })}
       </ListStats>
     </Section>
   );
